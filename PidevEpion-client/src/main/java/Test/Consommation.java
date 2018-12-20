@@ -14,7 +14,7 @@ public class Consommation {
 public static void main(String[] args) throws NamingException {
 		
 		
-	
+	//hello
 	InitialContext cxt = new InitialContext();
 	Object Object = cxt.lookup("PidevEpion-ear/PidevEpion-ejb/Consommation!Service.ConsommationRemote");
 	ConsommationRemote client =  (ConsommationRemote) Object ;
