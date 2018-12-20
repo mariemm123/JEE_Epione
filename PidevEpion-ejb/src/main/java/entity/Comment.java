@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 @NamedQuery(name="Comment.findAll", query="SELECT c FROM Comment c")
 public class Comment implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+//mariem
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ComID", unique=true, nullable=false)
