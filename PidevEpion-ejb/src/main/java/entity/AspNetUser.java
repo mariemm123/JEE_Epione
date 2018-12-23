@@ -18,7 +18,8 @@ public class AspNetUser implements Serializable {
 
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="Id", unique=true, nullable=false)
 	private int Id;
 	@Column(name="AccessFailedCount", nullable=false)
