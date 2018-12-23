@@ -30,6 +30,10 @@ public class Appointment implements Serializable {
 	@Column(nullable=false)
 	private int state;
 
+	//mariem
+	@ManyToOne
+	private Review Reviews ;
+	//
 	//bi-directional many-to-one association to AspNetUser
 	@ManyToOne
 	@JoinColumn(name="User_Id", referencedColumnName="Id")

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Review</h:head> 
+<body> 
+
+ <h:dataTable  value="#{reviewBean.displayAllReview()}" var="rvw"  border="1">
+   
+    <h:column>
+    <f:facet  name ="header" >Content</f:facet>
+        <h:outputText value="#{rvw.content}" ></h:outputText>
+   
+   </h:column>
+    <h:column>
+    <f:facet  name ="header" >Rating</f:facet>
+        <h:outputText value="#{rvw.rating}" ></h:outputText>
+   
+   </h:column>
+    <h:column>
+    <f:facet  name ="header" >Date</f:facet>
+        <h:outputText value="#{rvw.datePost}" ></h:outputText>
+   
+   </h:column>
+    <h:column>
+    <f:facet  name ="header" ><h:outputText value="Action" /></f:facet>
+        <h:commandButton action="#{userBean.removeUser(user)}" onclick="return confirm ('Are you sure')" value="Supprimer"  />
+    <h:commandButton action="#{userBean.removeUser(user.idUser)}" value="Modifier"  /> 
+   
+  </h:column>
+ 
+   
+ 
+    
+    </h:dataTable>
+
+</body> 
+</html>

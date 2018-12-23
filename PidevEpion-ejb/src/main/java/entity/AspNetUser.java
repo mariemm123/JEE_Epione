@@ -62,6 +62,19 @@ public class AspNetUser implements Serializable {
 
 	@Column(name="UserName", nullable=false, length=256)
 	private String userName;
+	//mariem 
+	
+	@OneToMany(mappedBy="AspNetUser")
+	private List<Review> Reviews ;
+	
+	
+	public List<Review> getReviews() {
+		return Reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		Reviews = reviews;
+	}
 
 	//bi-directional many-to-one association to Appointment
 	@OneToMany(mappedBy="aspNetUser1")
