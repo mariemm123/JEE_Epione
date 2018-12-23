@@ -5,17 +5,16 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	template="/WEB-INF/template/template.xhtml">
-	<ui:define name="title">Espace Patient</ui:define>
+	<ui:define name="title">Index</ui:define>
 	<ui:define name="content">
-		<h1>Espace Patient</h1>
+		<h1>Index page</h1>
 
 <h:form>
-
-
+    <h:commandButton action="signup.xhtml?faces-redirect=true" value="signup" />
 </h:form>
+
 <h:form>
-   <h:commandButton action="listeRV.xhtml?faces-redirect=true" value="liste de mes rendez_vous" />
-   <h:commandButton action="#{userBean.logout()}" value="log out" />
+    <h:commandButton action="Login.xhtml?faces-redirect=true" value="Login" />
 </h:form>
 	</ui:define>
 

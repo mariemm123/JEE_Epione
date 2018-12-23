@@ -53,7 +53,7 @@ public List<AspNetUser> displayAll(){
 public String logout() {
 	isLogged = false;
 	FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-	return "/Login?faces-redirect=true";
+	return "/Welecom?faces-redirect=true";
 }
 public String doLogin(){
 
