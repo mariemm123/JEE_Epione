@@ -42,10 +42,19 @@ public class Review implements Serializable {
 	public Review() {
 		super();
 	}   
-	public Review(String content2, float rating2) {
+	
+	public Review(int id, String content, Date datePost, float rating) {
 		super();
-		Content = content2;
-		this.rating = rating2;
+		this.id = id;
+		Content = content;
+		DatePost = datePost;
+		this.rating = rating;
+	}
+	public Review(String content, Date datePost, float rating) {
+		super();
+		Content = content;
+		DatePost = datePost;
+		this.rating = rating;
 	}
 	public int getId() {
 		return this.id;

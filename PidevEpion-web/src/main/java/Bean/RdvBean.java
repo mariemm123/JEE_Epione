@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 
 import Service.RdvManagement;
 import entity.Appointment;
+import entity.Review;
 
 
 
@@ -35,13 +36,15 @@ public class RdvBean {
     	return Appointments;
     }
     
-    public  Appointment detailRDV(int id){
+    public  String detailRDV(int id){
     	Appointment Rendez_Vous = RdvManagementLocal.getRDV(id);
-    	 return Rendez_Vous;
-    	
-    	 
-    	
+    	// return Rendez_Vous; 	
+    	 return "/listRV.xhtml?faces-redirect=true";
     }
+    
+    
+
+    
     
     
     

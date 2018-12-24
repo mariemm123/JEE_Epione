@@ -2,6 +2,7 @@ package Bean;
 
 
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -44,6 +45,62 @@ public class ReviewBean {
 	    	Reviews =ReviewManagementLocal.getAllReview();
 	    	return Reviews;
 	    }
+	    
+	    
+	    
+	   public void MAJReview()
+	    {
+		   ReviewManagementLocal.updateReview(new Review(Content,DatePost,rating));
+	    }
+	    
+	    public List<Review> displayReviewById(int id){
+	    	Reviews =ReviewManagementLocal.getReviewById(id);
+	    	return Reviews;
+	    }
+	    private String Content;
+	    private Date DatePost;
+	    private float rating;
+	    
+	    public List<Review> getReviews() {
+			return Reviews;
+		}
+
+		public void setReviews(List<Review> reviews) {
+			Reviews = reviews;
+		}
+
+		public Date getDatePost() {
+			return DatePost;
+		}
+
+		public void setDatePost(Date datePost) {
+			DatePost = datePost;
+		}
+
+		public float getRating() {
+			return rating;
+		}
+
+		public void setRating(float rating) {
+			this.rating = rating;
+		}
+
+		public String getContent() {
+			return Content;
+		}
+
+		public void setContent(String content) {
+			this.Content = content;
+		}
+
+		public void editReview (Review review)
+	    {
+	    	this.setContent(review.getContent());
+	    	this.setDatePost(review.getDatePost());
+	    	this.setRating(review.getRating());
+	    }
+	    
+	    
 	    
 	    public int removeReview (int ReviewId)
 	    {

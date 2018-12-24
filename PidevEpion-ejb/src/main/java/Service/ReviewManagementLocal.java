@@ -14,4 +14,5 @@ public interface ReviewManagementLocal {
 
 	List<Review> getAllReview();
 	public void deleteReviewbyid(int ReviewId);
+	public List<Review> getReviewById(int id );
 }

@@ -104,6 +104,22 @@ $(function () {
 
     
    <h:form>
+   
+    <h:dataTable  value="#{rdvBean.displayAllRDV()}" var="rdv"  border="0">
+   <h:column>
+    <f:facet  name ="header" >Raison</f:facet>
+        <h:outputText value="#{rdv.reason}" ></h:outputText>
+ 
+   </h:column>
+    <h:column>
+    <f:facet  name ="header" >State</f:facet>
+        <h:outputText value="#{rvw.state}" ></h:outputText>
+   
+   </h:column> 
+    
+     
+    
+    </h:dataTable> 
 <h:panelGrid columns="2"> 
 <h:outputLabel value="content" />
 <h:inputTextarea rows="10" cols="30" value="#{reviewBean.review.content}"  />

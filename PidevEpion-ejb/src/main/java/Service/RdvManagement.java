@@ -46,8 +46,8 @@ public class RdvManagement implements RdvManagementRemote, RdvManagementLocal {
   
 	@Override
 	public Appointment getRDV(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query=em.createQuery("select e from Appointment e where e.id='"+id+"' ");
+		return (Appointment) query.getSingleResult();
 	}
 	
 	

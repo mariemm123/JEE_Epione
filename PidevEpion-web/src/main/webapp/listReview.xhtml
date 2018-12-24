@@ -10,7 +10,9 @@
 		<h1>Review</h1>
 
 
-
+ <h:form>
+    <h:commandButton onclick="return confirm ('Are you sure')" action="#{reviewBean.MAJReview()}" value="Mettre a jours" />
+</h:form>
  <h:dataTable  value="#{reviewBean.displayAllReview()}" var="rvw"  border="1">
    
     <h:column>
@@ -40,6 +42,13 @@
     <f:facet  name ="header" ><h:outputText value="Action" /></f:facet>
        <h:form>
     <h:commandButton onclick="return confirm ('Are you sure')" action="#{reviewBean.removeReview(rvw.id)}" value="Supprimer" />
+</h:form>
+   </h:column>
+   
+      <h:column>
+    <f:facet  name ="header" ><h:outputText value="Action" /></f:facet>
+       <h:form>
+    <h:commandButton onclick="return confirm ('Are you sure')" action="#{reviewBean.editReview(rvw)}" value="Modifier" />
 </h:form>
    </h:column>
    

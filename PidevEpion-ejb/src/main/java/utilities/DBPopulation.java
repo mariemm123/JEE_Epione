@@ -17,7 +17,7 @@ public class DBPopulation {
 	@EJB
 	UserManagementLocal um;
 	ReviewManagementLocal rl ;
-	Review r = new Review("nonono",(float) 15);
+	//Review r = new Review("nonono",(float) 15);
 		//User u1=new User("nom4","login4","mdp4","mm");
 		//User u2=new User("nom4","login4","mdp4");
 		

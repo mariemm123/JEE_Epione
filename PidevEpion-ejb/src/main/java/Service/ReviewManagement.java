@@ -31,11 +31,23 @@ public class ReviewManagement implements ReviewManagementRemote, ReviewManagemen
     public void addReview(Review review){
     	em.persist(review);
     }
+    public void updateReview(Review review)
+    {
+    	em.merge(review);
+    }
     
     
 	@Override 
 	public List<Review> getAllReview() {
 		List<Review> query=em.createQuery("select e from Review e",
+				Review.class).getResultList();
+		return query ;
+	}
+	
+	
+	@Override 
+	public List<Review> getReviewById(int id) {
+		List<Review> query=em.createQuery("select e from Review e Where e.id='"+id+"'",
 				Review.class).getResultList();
 		return query ;
 	}
