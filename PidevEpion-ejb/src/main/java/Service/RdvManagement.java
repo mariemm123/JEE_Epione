@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import entity.Appointment;
+import entity.Review;
 
 
 /**
@@ -42,8 +43,7 @@ public class RdvManagement implements RdvManagementRemote, RdvManagementLocal {
 		return (Appointment) query.getSingleResult();
 	}*/
 
-
-
+  
 	@Override
 	public Appointment getRDV(int id) {
 		// TODO Auto-generated method stub

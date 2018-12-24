@@ -39,5 +39,15 @@ public class ReviewManagement implements ReviewManagementRemote, ReviewManagemen
 				Review.class).getResultList();
 		return query ;
 	}
+	
+	  @Override
+	    public void deleteReviewbyid(int ReviewId)
+	    {
+	      Review e =em.find(Review.class,ReviewId )	;
+	      em.remove(e);
+	      System.out.println("supprimee1"+e); 
+		 
+	    }
+
 
 }

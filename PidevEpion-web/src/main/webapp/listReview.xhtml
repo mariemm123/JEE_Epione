@@ -1,11 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/template/template.xhtml">
+<ui:define name="title">Review</ui:define>
+	<ui:define name="content">
+		<h1>Review</h1>
 
-<h:head>Review</h:head> 
-<body> 
+
 
  <h:dataTable  value="#{reviewBean.displayAllReview()}" var="rvw"  border="1">
    
@@ -15,6 +19,7 @@
    
    </h:column>
     <h:column>
+    
     <f:facet  name ="header" >Rating</f:facet>
         <h:outputText value="#{rvw.rating}" ></h:outputText>
    
@@ -25,16 +30,23 @@
    
    </h:column>
     <h:column>
-    <f:facet  name ="header" ><h:outputText value="Action" /></f:facet>
-        <h:commandButton action="#{userBean.removeUser(user)}" onclick="return confirm ('Are you sure')" value="Supprimer"  />
-    <h:commandButton action="#{userBean.removeUser(user.idUser)}" value="Modifier"  /> 
    
   </h:column>
  
-   
+  <!--  onclick="return confirm ('Are you sure')" -->
  
-    
+   <!--  <h:commandButton action="#{userBean.removeUser(user.idUser)}" value="Modifier"  />  -->
+       <h:column>
+    <f:facet  name ="header" ><h:outputText value="Action" /></f:facet>
+       <h:form>
+    <h:commandButton onclick="return confirm ('Are you sure')" action="#{reviewBean.removeReview(rvw.id)}" value="Supprimer" />
+</h:form>
+   </h:column>
+   
     </h:dataTable>
+    
 
-</body> 
-</html>
+	</ui:define>
+
+
+</ui:composition>

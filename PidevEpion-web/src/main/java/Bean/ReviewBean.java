@@ -44,6 +44,13 @@ public class ReviewBean {
 	    	Reviews =ReviewManagementLocal.getAllReview();
 	    	return Reviews;
 	    }
+	    
+	    public int removeReview (int ReviewId)
+	    {
+	    	ReviewManagementLocal.deleteReviewbyid(ReviewId);
+	    	System.out.println("supprimee2");
+	    	return ReviewId;
+	    }
 
 	public void setReview(Review review) {
 		this.review = review;

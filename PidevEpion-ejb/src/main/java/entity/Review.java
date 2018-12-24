@@ -26,6 +26,7 @@ public class Review implements Serializable {
 	private Appointment Appointment ;
 	private static final long serialVersionUID = 1L;
 
+
 	public AspNetUser getAspNetUser() {
 		return AspNetUser;
 	}
@@ -41,6 +42,11 @@ public class Review implements Serializable {
 	public Review() {
 		super();
 	}   
+	public Review(String content2, float rating2) {
+		super();
+		Content = content2;
+		this.rating = rating2;
+	}
 	public int getId() {
 		return this.id;
 	}

@@ -9,4 +9,5 @@ import entity.Appointment;
 @Remote
 public interface RdvManagementRemote {
 	public List<Appointment> getAllRDV();
+	
 }
